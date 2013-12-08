@@ -11,7 +11,7 @@ namespace PostingRobot.UnitTest
     {
         public static HttpWebRequest RequestCase()
         {
-
+            return null;
         }
     }
 }

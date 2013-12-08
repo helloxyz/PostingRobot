@@ -8,8 +8,8 @@ namespace PostingRobot.lib
 {
     public interface IClientSession
     {
-        public void GetCookieCollection();
-        public void Login();
-        public void Post();
+        void GetCookieCollection();
+        void Login();
+        void Post();
     }
 }

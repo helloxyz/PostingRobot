@@ -1,0 +1,13 @@
+--------------------------------------
+
+Project Name : PostingRobot
+Author       : HuiZhong Xian
+Date         : 2013-12-01
+
+--------------------------------------
+
+
+--------------------------------------
+[2013-12-07 20:23:12]
+Sqlite connection string 
+    data source=c:\db;Version=3;

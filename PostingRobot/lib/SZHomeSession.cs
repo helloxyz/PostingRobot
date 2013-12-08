@@ -15,7 +15,7 @@ namespace PostingRobot.lib
         {
             this._WebName = webName;
         }
-        public override void Login()
+        public  void Login()
         {
             if (_WebName == null || _WebName == "")
                 return;

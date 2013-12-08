@@ -20,17 +20,17 @@ namespace PostingRobot.lib
         public string PostUrl { get; set; }
         public HttpWebRequest Request { get; set; }
 
-        abstract public void GetCookieCollection()
+        public void GetCookieCollection()
         {
             throw new NotImplementedException();
         }
 
-        abstract public void Login()
+        public void Login()
         {
 
         }
 
-        abstract public void Post()
+        public void Post()
         {
             throw new NotImplementedException();
         }
