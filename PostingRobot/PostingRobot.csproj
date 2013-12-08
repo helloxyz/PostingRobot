@@ -92,9 +92,11 @@
     <Compile Include="lib\Common\ConstUI.cs" />
     <Compile Include="lib\Common\QueryHelper.cs" />
     <Compile Include="lib\Common\SqliteHelper.cs" />
+    <Compile Include="lib\Controls\ControlPanel.cs" />
     <Compile Include="lib\Controls\MyLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="lib\Controls\Test.cs" />
     <Compile Include="lib\Controls\UserLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +105,7 @@
     </Compile>
     <Compile Include="lib\DAL\SqliteSession.cs" />
     <Compile Include="lib\Model\WebInfo.cs" />
+    <Compile Include="lib\Util\GlobalUtil.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +120,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="lib\RequestXml.cs" />
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnitTest\HttpWebTest.cs" />
     <EmbeddedResource Include="Layout\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -137,6 +146,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NLog.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,7 +167,9 @@
     <Content Include="Externals\SQLite.Interop.dll" />
     <Content Include="Externals\sqlite3.dll" />
     <Content Include="Externals\System.Data.SQLite.dll" />
-    <Content Include="sql.txt" />
+    <Content Include="sql.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

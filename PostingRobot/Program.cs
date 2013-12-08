@@ -17,7 +17,7 @@ namespace PostingRobot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OptionsForm());
+            Application.Run(new TestForm());
         }
     }
 }

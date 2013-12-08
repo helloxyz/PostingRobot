@@ -41,16 +41,18 @@ namespace PostingRobot.lib.Common
                 string line = "";
                 using (StreamReader sr = new StreamReader(queryPath))
                 {
-                    line = sr.ReadLine().Trim();
-                    if (line.StartsWith("[") && line.EndsWith("]"))
+                    while ((line = sr.ReadLine().Trim()) != null)
                     {
-                        currentSection = line.Substring(1,line.Length - 2).ToUpper();
-                    }
-                    if (section == currentSection)
-                    {
-                        if (line.StartsWith(key, true, null))
+                        if (line.StartsWith("[") && line.EndsWith("]"))
                         {
-                            return line.Substring(line.IndexOf('='));
+                            currentSection = line.Substring(1, line.Length - 2).ToUpper();
+                        }
+                        if (section == currentSection)
+                        {
+                            if (line.StartsWith(key, true, null))
+                            {
+                                return line.Substring(line.IndexOf('=') + 1);
+                            }
                         }
                     }
                 }

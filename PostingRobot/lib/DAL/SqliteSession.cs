@@ -8,6 +8,7 @@ using PostingRobot.lib.Common;
 using System.Data.SQLite;
 using PostingRobot.lib.Model;
 using System.Data;
+using PostingRobot.lib.Common;
 
 namespace PostingRobot.lib.DAL
 {
@@ -82,18 +83,32 @@ namespace PostingRobot.lib.DAL
 
         public List<WebInfo> LoadWebInfo()
         {
-            string selectQuery = String.Format("select * from [{0}]",ConstPR.webInfoName);
+            string QueryWebInfo = QueryHelper.GetInstance().GetQueryCommand("", "QueryWebInfo");
             try
             {
-                DataSet ds = sqliteHelper.GetDs(selectQuery);
+                DataSet ds = sqliteHelper.GetDs(QueryWebInfo);
                 if (ds != null && ds.Tables != null && ds.Tables.Count > 0)
                 {
                     List<WebInfo> webList = new List<WebInfo>();
                     foreach (DataRow record in ds.Tables[0].Rows)
                     {
                         WebInfo webinfo = new WebInfo();
+                        webinfo.Id = record[ConstPR.ID].ToString();
                         webinfo.Name = record[ConstPR.name].ToString();
                         webinfo.Host = record[ConstPR.host].ToString();
+                        webinfo.GroupName = record[ConstPR.groupName].ToString();
+
+                        WebHeaders headers = new WebHeaders();
+                        headers.Accept = record[ConstPR.accept].ToString();
+                        headers.AcceptEncoding = record[ConstPR.acceptEncoding].ToString();
+                        headers.AcceptLanguage = record[ConstPR.acceptLanguage].ToString();
+                        headers.UserAgent = record[ConstPR.userAgent].ToString();
+                        headers.ContentType = record[ConstPR.contentType].ToString();
+                        headers.ContentLength = record[ConstPR.contentLength].ToString();
+                        headers.Connection = record[ConstPR.connection].ToString();
+                        headers.Cookie = record[ConstPR.cookie].ToString();
+
+                        webinfo.Headers = headers;
                         webList.Add(webinfo);
                     }
                     return webList;

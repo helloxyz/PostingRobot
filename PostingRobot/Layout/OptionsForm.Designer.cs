@@ -72,11 +72,12 @@
             // 
             // splitContainer_top.Panel1
             // 
+            this.splitContainer_top.Panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.splitContainer_top.Panel1.Controls.Add(this.treeView_list);
             // 
             // splitContainer_top.Panel2
             // 
-            this.splitContainer_top.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer_top.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.splitContainer_top.Size = new System.Drawing.Size(534, 330);
             this.splitContainer_top.SplitterDistance = 150;
             this.splitContainer_top.TabIndex = 0;

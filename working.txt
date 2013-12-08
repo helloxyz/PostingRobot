@@ -11,3 +11,9 @@ Date         : 2013-12-01
 [2013-12-07 20:23:12]
 Sqlite connection string 
     data source=c:\db;Version=3;
+
+
+--------------------------------------
+[2013-12-08 18:18:16]
+今天遇到一个关于winform panel控件位置布局的问题，现在稍微弄懂了一点。
+panel的padding属性，只有在panel内的控件设置了Dock属性之后才会看到效果，而且一旦控件设置了Dock后，其Left和Top属性不起作用。

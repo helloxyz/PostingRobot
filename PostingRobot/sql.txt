@@ -1,15 +1,2 @@
-﻿CREATE TABLE "main"."NewTable" (
-"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL DEFAULT 10,
-"host"  TEXT(50),
-"accept"  TEXT,
-"acceptencoding"  TEXT,
-"acceptlanguage"  TEXT,
-"useragent"  TEXT,
-"contenttype"  TEXT,
-"contentlength"  REAL,
-"connection"  TEXT,
-""  TEXT
-)
-;
-
+﻿CREATE TABLE "main"."NewTable" ("id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL DEFAULT 10, "host"  TEXT(50), "accept"  TEXT, "acceptencoding"  TEXT, "acceptlanguage"  TEXT, "useragent"  TEXT, "contenttype"  TEXT, "contentlength"  REAL, "connection"  TEXT);
 QueryWebInfo=SELECT * from webinfo LEFT JOIN headers on webinfo.headers = headers.id;
